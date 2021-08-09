@@ -1,0 +1,9 @@
+C:\Users\Rahul\Desktop\C# workdone\Day 2\Day 2\obj\Debug\Day 2.csprojResolveAssemblyReference.cache
+C:\Users\Rahul\Desktop\C# workdone\Day 2\Day 2\obj\Debug\Day_2.Form1.resources
+C:\Users\Rahul\Desktop\C# workdone\Day 2\Day 2\obj\Debug\Day_2.Properties.Resources.resources
+C:\Users\Rahul\Desktop\C# workdone\Day 2\Day 2\obj\Debug\Day 2.csproj.GenerateResource.Cache
+C:\Users\Rahul\Desktop\C# workdone\Day 2\Day 2\bin\Debug\Day 2.exe.config
+C:\Users\Rahul\Desktop\C# workdone\Day 2\Day 2\bin\Debug\Day 2.exe
+C:\Users\Rahul\Desktop\C# workdone\Day 2\Day 2\bin\Debug\Day 2.pdb
+C:\Users\Rahul\Desktop\C# workdone\Day 2\Day 2\obj\Debug\Day 2.exe
+C:\Users\Rahul\Desktop\C# workdone\Day 2\Day 2\obj\Debug\Day 2.pdb
