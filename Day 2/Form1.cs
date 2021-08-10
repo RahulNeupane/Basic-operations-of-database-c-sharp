@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,15 +31,42 @@ namespace Day_2
                 string st_name = std_name.Text;
                 string st_address = std_address.Text;
 
+                //var = file_name;
+                string file_name = "";
+                string path = "";
+                
+                if (openFileDialog != null)
+                {
+                    if (File.Exists(openFileDialog.FileName))
+                    {
+                        file_name = Path.GetFileName(openFileDialog.FileName);
+                        path = Application.StartupPath + "\\UploadedImage\\"+ file_name;
+
+                        if(!Directory.Exists(Application.StartupPath + "\\UploadedImage\\"))
+                        {
+                            Directory.CreateDirectory(Application.StartupPath + "\\UploadedImage\\");
+                        }
+                        File.Copy(openFileDialog.FileName, path);
+                    }
+                }
+               
+
+                
                 //save data to database
                 //string query = "Insert into student_details(name,address) values ("+st_name+","+st_address+")";
                 //SqlCommand cmd = new SqlCommand(query, conn);
 
 
-                string query = "Insert into student_details(name,address) values (@parameter_name,@parameter_address)";
+                string query = "Insert into student_details(name,address,photo_path) values (@parameter_name,@parameter_address,@parameter_photo_path)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@parameter_name", st_name);
                 cmd.Parameters.AddWithValue("@parameter_address", st_address);
+
+                //save complete file path
+                cmd.Parameters.AddWithValue("@parameter_photo_path", path);
+
+                ////save file name only
+                //cmd.Parameters.AddWithValue("@parameter_photo_path", file_name);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Saved successfully");
 
@@ -92,7 +120,7 @@ namespace Day_2
                 foreach(DataRow dataRow in dt.Rows)
                 {
                     sn++;
-                    Std_list.Rows.Add(dataRow["ID"],sn, dataRow["name"], dataRow["address"],"Edit");
+                    Std_list.Rows.Add(dataRow["ID"],sn, dataRow["name"], dataRow["address"],dataRow["photopath"],"Edit");
                     
                 }
 
@@ -249,5 +277,22 @@ namespace Day_2
             std_address.Text = "";
             student_id = 0;
         }
+
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        private void Selectphoto_Click(object sender, EventArgs e)
+        {
+            openFileDialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files (*.png)|*.png| jpeg files(*.jpeg)|*.jpeg|";
+            if(openFileDialog.ShowDialog() ==  DialogResult.OK)
+            {
+                photo.Image = Image.FromFile(openFileDialog.FileName);
+            }
+            else
+            {
+                MessageBox.Show("closed file dialog");
+            }
+
+            
+        }
+
     }
 }
