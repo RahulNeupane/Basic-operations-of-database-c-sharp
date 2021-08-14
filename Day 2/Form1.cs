@@ -120,7 +120,7 @@ namespace Day_2
                 foreach(DataRow dataRow in dt.Rows)
                 {
                     sn++;
-                    Std_list.Rows.Add(dataRow["ID"],sn, dataRow["name"], dataRow["address"],dataRow["photopath"],"Edit");
+                    Std_list.Rows.Add(dataRow["ID"],sn, dataRow["name"], dataRow["address"],dataRow["photo_path"],"Edit");
                     
                 }
 
@@ -214,11 +214,18 @@ namespace Day_2
                 string student_name = Std_list.CurrentRow.Cells["Student_name"].Value.ToString();
                 student_id = Convert.ToInt32(Std_list.CurrentRow.Cells["SN"].Value.ToString());
                 string student_address = Std_list.CurrentRow.Cells["Address"].Value.ToString();
+                string photo_path = Std_list.CurrentRow.Cells["FilePath"].Value.ToString();
 
                 MessageBox.Show("Id: " + student_id + "\n Name: " + student_name);
 
                 std_name.Text = student_name;
                 std_address.Text = student_address;
+
+                //for save and get filename only
+                //string path = Application.StartupPath + "\\UploadedImage\\" + photo_path;
+
+                //for full path
+                photo.Image = Image.FromFile(photo_path);
             }
         }
 
@@ -281,7 +288,7 @@ namespace Day_2
         OpenFileDialog openFileDialog = new OpenFileDialog();
         private void Selectphoto_Click(object sender, EventArgs e)
         {
-            openFileDialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files (*.png)|*.png| jpeg files(*.jpeg)|*.jpeg|";
+            openFileDialog.Filter = "Images only (*.jpeg; *.jpg; *.gif; *.bmp; *.png) |*.jpg; *.jpeg; *.gif; *.bmp; *.png";
             if(openFileDialog.ShowDialog() ==  DialogResult.OK)
             {
                 photo.Image = Image.FromFile(openFileDialog.FileName);

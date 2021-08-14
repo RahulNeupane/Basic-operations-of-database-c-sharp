@@ -31,6 +31,12 @@
             this.std_name = new System.Windows.Forms.TextBox();
             this.std_address = new System.Windows.Forms.TextBox();
             this.Std_list = new System.Windows.Forms.DataGridView();
+            this.stdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Student_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Add = new System.Windows.Forms.Button();
@@ -39,12 +45,6 @@
             this.Clear = new System.Windows.Forms.Button();
             this.photo = new System.Windows.Forms.PictureBox();
             this.Selectphoto = new System.Windows.Forms.Button();
-            this.stdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Student_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Std_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.SuspendLayout();
@@ -83,84 +83,6 @@
             this.Std_list.Size = new System.Drawing.Size(590, 388);
             this.Std_list.TabIndex = 2;
             this.Std_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Std_list_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Address";
-            // 
-            // Add
-            // 
-            this.Add.Location = new System.Drawing.Point(10, 128);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(75, 40);
-            this.Add.TabIndex = 3;
-            this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
-            // 
-            // Remove
-            // 
-            this.Remove.Location = new System.Drawing.Point(138, 128);
-            this.Remove.Name = "Remove";
-            this.Remove.Size = new System.Drawing.Size(75, 40);
-            this.Remove.TabIndex = 4;
-            this.Remove.Text = "Remove";
-            this.Remove.UseVisualStyleBackColor = true;
-            this.Remove.Click += new System.EventHandler(this.Remove_Click);
-            // 
-            // Update
-            // 
-            this.Update.Location = new System.Drawing.Point(10, 184);
-            this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(75, 40);
-            this.Update.TabIndex = 6;
-            this.Update.Text = "Update";
-            this.Update.UseVisualStyleBackColor = true;
-            this.Update.Click += new System.EventHandler(this.Update_click);
-            // 
-            // Clear
-            // 
-            this.Clear.Location = new System.Drawing.Point(138, 184);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(75, 40);
-            this.Clear.TabIndex = 7;
-            this.Clear.Text = "Clear";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_click);
-            // 
-            // photo
-            // 
-            this.photo.Location = new System.Drawing.Point(4, 233);
-            this.photo.Name = "photo";
-            this.photo.Size = new System.Drawing.Size(228, 137);
-            this.photo.TabIndex = 8;
-            this.photo.TabStop = false;
-            // 
-            // Selectphoto
-            // 
-            this.Selectphoto.Location = new System.Drawing.Point(77, 376);
-            this.Selectphoto.Name = "Selectphoto";
-            this.Selectphoto.Size = new System.Drawing.Size(75, 23);
-            this.Selectphoto.TabIndex = 9;
-            this.Selectphoto.Text = "Select photo";
-            this.Selectphoto.UseVisualStyleBackColor = true;
-            this.Selectphoto.Click += new System.EventHandler(this.Selectphoto_Click);
             // 
             // stdID
             // 
@@ -202,6 +124,85 @@
             this.Action.Name = "Action";
             this.Action.ReadOnly = true;
             this.Action.Width = 75;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Address";
+            // 
+            // Add
+            // 
+            this.Add.Location = new System.Drawing.Point(12, 300);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(75, 40);
+            this.Add.TabIndex = 3;
+            this.Add.Text = "Add";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // Remove
+            // 
+            this.Remove.Location = new System.Drawing.Point(140, 300);
+            this.Remove.Name = "Remove";
+            this.Remove.Size = new System.Drawing.Size(75, 40);
+            this.Remove.TabIndex = 4;
+            this.Remove.Text = "Remove";
+            this.Remove.UseVisualStyleBackColor = true;
+            this.Remove.Click += new System.EventHandler(this.Remove_Click);
+            // 
+            // Update
+            // 
+            this.Update.Location = new System.Drawing.Point(12, 356);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(75, 40);
+            this.Update.TabIndex = 6;
+            this.Update.Text = "Update";
+            this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_click);
+            // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(140, 356);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(75, 40);
+            this.Clear.TabIndex = 7;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_click);
+            // 
+            // photo
+            // 
+            this.photo.Location = new System.Drawing.Point(5, 126);
+            this.photo.Name = "photo";
+            this.photo.Size = new System.Drawing.Size(228, 137);
+            this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.photo.TabIndex = 8;
+            this.photo.TabStop = false;
+            // 
+            // Selectphoto
+            // 
+            this.Selectphoto.Location = new System.Drawing.Point(78, 269);
+            this.Selectphoto.Name = "Selectphoto";
+            this.Selectphoto.Size = new System.Drawing.Size(75, 23);
+            this.Selectphoto.TabIndex = 9;
+            this.Selectphoto.Text = "Select photo";
+            this.Selectphoto.UseVisualStyleBackColor = true;
+            this.Selectphoto.Click += new System.EventHandler(this.Selectphoto_Click);
             // 
             // Form1
             // 
