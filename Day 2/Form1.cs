@@ -283,6 +283,7 @@ namespace Day_2
             std_name.Text = "";
             std_address.Text = "";
             student_id = 0;
+            photo = null;
         }
 
         OpenFileDialog openFileDialog = new OpenFileDialog();
